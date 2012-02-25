@@ -31,7 +31,7 @@
   "recommendations": {
   },
   "recipes": {
-    "node-js": "Install node and npm"
+    "node::node-js": "Install node and npm"
   },
   "groupings": {
   },
