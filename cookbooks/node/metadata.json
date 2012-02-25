@@ -11,7 +11,7 @@
       "choice": [
 
       ],
-      "default": "HEAD",
+      "default": "v0.6.11-release",
       "type": "string",
       "recipes": [
 
