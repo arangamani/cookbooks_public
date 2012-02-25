@@ -6,7 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.6"
 depends          "git"
 supports         "ubuntu"
-recipe           "node-js", "Install node and npm"
+recipe           "node::node-js", "Install node and npm"
 
 attribute "node-js/version",
   :display_name => "The version of node to install",
