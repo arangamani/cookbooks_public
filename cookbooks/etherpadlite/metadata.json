@@ -1,31 +1,32 @@
 {
   "recipes": {
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
+    "etherpadlite::start_pad": "Start the pad"
   },
-  "recommendations": {
+  "description": "Installs/Configures etherpadlite",
+  "attributes": {
   },
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "version": "0.0.1",
+  "dependencies": {
+    "node": ">= 0.0.0"
+  },
+  "maintainer": "Arangamanikkannan Manicka",
   "replacing": {
   },
-  "groupings": {
-  },
-  "attributes": {
+  "providing": {
   },
   "suggestions": {
   },
-  "license": "Apache 2.0",
-  "description": "Installs/Configures etherpadlite",
-  "providing": {
-  },
+  "version": "0.0.1",
   "conflicting": {
   },
-  "maintainer": "Arangamanikkannan Manicka",
   "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "name": "etherpadlite",
-  "dependencies": {
+  "groupings": {
   },
   "platforms": {
-  }
+  },
+  "name": "etherpadlite",
+  "recommendations": {
+  },
+  "license": "Apache 2.0",
+  "maintainer_email": "arangamani.kannan@gmail.com"
 }
