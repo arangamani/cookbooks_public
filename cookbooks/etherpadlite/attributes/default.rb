@@ -1,0 +1,5 @@
+default[:etherpadlite][:ipaddress]	= "0.0.0.0"
+default[:etherpadlite][:port]		= "80"
+default[:etherpadlite][:dbtype]		= "dirty"
+default[:etherpadlite][:logfile]	= "/var/log/etherpadlite.log"
+default[:etherpadlite][:dirtyfile]	= "/var/dirty.db"

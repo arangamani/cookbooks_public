@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: etherpadlite
-# Recipe:: default
+# Recipe:: prepare_pad
 #
 # Copyright 2012, Arangamanikkannan Manickam
 #

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: etherpadlite
-# Recipe:: default
+# Recipe:: start_pad
 #
 # Copyright 2012, Arangamanikkannan Manickam
 #
@@ -23,8 +23,7 @@ bash "start_pad" do
   cwd "/var/etherpad-lite/node"
   code <<-EOH
     touch /var/log/etherpadlite.log
-    #node server.js &>#{etherpadlite[:etherpadlite][:logfile]}
-    node server.js &>/var/log/etherpadlite.log
+    node server.js &>#{node[:etherpadlite][:logfile]}
   EOH
 end
 
