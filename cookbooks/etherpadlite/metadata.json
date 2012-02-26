@@ -1,47 +1,33 @@
 {
-  "dependencies": {
-    "rs_utils": ">= 0.0.0",
-    "node": ">= 0.0.0"
-  },
   "groupings": {
   },
   "replacing": {
   },
-  "providing": {
+  "dependencies": {
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0"
   },
+  "name": "etherpadlite",
   "suggestions": {
-  },
-  "platforms": {
-  },
-  "recipes": {
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
-    "etherpadlite::start_pad": "Start the pad"
-  },
-  "conflicting": {
   },
   "maintainer": "Arangamanikkannan Manickam",
   "recommendations": {
   },
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "description": "Installs/Configures etherpadlite",
-  "name": "etherpadlite",
-  "attributes": {
-    "etherpad-lite/logfile": {
-      "required": "optional",
-      "display_name": "Log file for etherpad lite",
-      "choice": [
-
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ],
-      "default": "/var/log/etherpadlite.log",
-      "type": "string",
-      "description": "This file is used for looging all communication messages related to etherpad lite"
-    }
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "license": "Apache 2.0",
   "version": "0.0.1",
-  "license": "Apache 2.0"
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "maintainer_email": "arangamani.kannan@gmail.com",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "recipes": {
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
+  },
+  "platforms": {
+  },
+  "attributes": {
+  },
+  "description": "Installs/Configures etherpadlite"
 }
