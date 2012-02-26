@@ -10,3 +10,8 @@ depends		 "rs_utils"
 recipe		 "etherpadlite::prepare_pad", "Installs and prepares etherpad lite"
 recipe		 "etherpadlite::start_pad", "Start the pad"
 
+attribute "etherpad-lite/logfile",
+  :display_name => "Log file for etherpad lite",
+  :description => "This file is used for looging all communication messages related to etherpad lite",
+  :default => "/var/log/etherpadlite.log"
+
