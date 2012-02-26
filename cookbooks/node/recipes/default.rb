@@ -38,7 +38,9 @@ bash "compile_nodejs_source" do
     git clone git://github.com/joyent/node.git
     cd node
     git checkout #{node[:node][:version]}
-    ./configure && make && make install
+    ./configure --prefix=/usr
+    make
+    make install
   EOH
 end
 
