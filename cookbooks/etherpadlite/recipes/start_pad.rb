@@ -19,7 +19,28 @@
 
 rs_utils_marker :begin
 
-package "daemonize"
+case node[:platform]
+  when "centos", "redhat", "fedora"
+    package "daemonize"
+  when "debian", "ubuntu"
+    bash "clone_daemonize" do
+      cwd "/var/"
+      code <<-EOH
+        git clone git://github.com/arangamani/daemonize.git
+	cd daemonize
+        git checkout "for_cooking"
+      EOH
+    end
+    
+    bash "install_daemonize" do
+      cwd "/var/daemonize/"
+      code <<-EOH
+        ./configure
+        make
+        make install
+      EOH
+    end
+end
 
 bash "start_pad" do
   cwd "/var/etherpad-lite/node"
