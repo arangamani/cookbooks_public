@@ -29,6 +29,7 @@ bash "get_etherpadlite_source" do
 end
 
 bash "etherpadlite_install_deps" do
+  user "root"
   cwd "/var/etherpad-lite/"
   code <<-EOH
     sh bin/installDeps.sh

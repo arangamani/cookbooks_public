@@ -1,32 +1,33 @@
 {
+  "suggestions": {
+  },
+  "maintainer": "Arangamanikkannan Manickam",
+  "platforms": {
+  },
+  "license": "Apache 2.0",
+  "version": "0.0.1",
+  "description": "Installs/Configures etherpadlite",
+  "conflicting": {
+  },
+  "dependencies": {
+    "rs_utils": ">= 0.0.0",
+    "node": ">= 0.0.0"
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "name": "etherpadlite",
+  "attributes": {
+  },
+  "recommendations": {
+  },
   "recipes": {
     "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
     "etherpadlite::start_pad": "Start the pad"
   },
-  "description": "Installs/Configures etherpadlite",
-  "attributes": {
+  "groupings": {
   },
-  "dependencies": {
-    "node": ">= 0.0.0"
-  },
-  "maintainer": "Arangamanikkannan Manicka",
   "replacing": {
   },
   "providing": {
   },
-  "suggestions": {
-  },
-  "version": "0.0.1",
-  "conflicting": {
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "groupings": {
-  },
-  "platforms": {
-  },
-  "name": "etherpadlite",
-  "recommendations": {
-  },
-  "license": "Apache 2.0",
   "maintainer_email": "arangamani.kannan@gmail.com"
 }
