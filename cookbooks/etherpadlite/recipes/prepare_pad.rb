@@ -19,6 +19,8 @@
 
 rs_utils_marker :begin
 
+include_recipe "node::default"
+
 bash "get_etherpadlite_source" do
   cwd "/var/"
   code <<-EOH
