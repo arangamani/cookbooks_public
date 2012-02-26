@@ -22,7 +22,7 @@ rs_utils_marker :begin
 bash "start_pad" do
   cwd "/var/etherpad-lite/node"
   code <<-EOH
-    touch /var/log/etherpadlite.log
+    touch #{node[:etherpadlite][:logfile]}
     node server.js &>#{node[:etherpadlite][:logfile]}
   EOH
 end
