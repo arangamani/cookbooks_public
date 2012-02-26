@@ -43,11 +43,11 @@ bash "compile_nodejs_source" do
 end
 
 
-bash "install_npm" do
-  user "root"
-    cwd "/tmp/"
-    code <<-EOH
-    curl http://npmjs.org/install.sh | clean=no sh
-    EOH
-end
+#bash "install_npm" do
+#  user "root"
+#    cwd "/tmp/"
+#    code <<-EOH
+#    curl http://npmjs.org/install.sh | clean=no sh
+#    EOH
+#end
 
