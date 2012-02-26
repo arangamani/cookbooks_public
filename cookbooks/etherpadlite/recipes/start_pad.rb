@@ -19,11 +19,13 @@
 
 rs_utils_marker :begin
 
+package "daemonize"
+
 bash "start_pad" do
   cwd "/var/etherpad-lite/node"
   code <<-EOH
     touch #{node[:etherpadlite][:logfile]}
-    node server.js &>#{node[:etherpadlite][:logfile]}
+    daemonize -o #{node[:etherpadlite][logfile]} -c /var/etherpad-lite/node -p /var/etherpad-lite/etherpadlited /usr/local/bin/node /var/etherpad-lite/node/server.js
   EOH
 end
 
