@@ -34,7 +34,7 @@ bash "update_ruby_and_install_mysql_gem" do
   EOH
 end
 
-begin
+#begin
 #  gem_package "mysql" do
 #    action :install
 #  end
@@ -47,8 +47,8 @@ begin
   # Creating the database for etherpad lite
   con.query("create database etherpadlite")
   con.close
-  rescue LoadError
-    Chef::Log.info("Missing gem 'mysql'")
-end
+#  rescue LoadError
+#    Chef::Log.info("Missing gem 'mysql'")
+#end
 
 rs_utils_marker :end
