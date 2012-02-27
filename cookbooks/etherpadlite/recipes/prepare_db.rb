@@ -33,18 +33,16 @@ bash "update_ruby" do
   EOH
 end
 
-begin
-  gem_package "mysql" do
-    action :install
-  end
-
-  require 'rubygems'
-  require 'mysql'
-  con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
-
-  #Creating the database for etherpad lite
-  con.query("create database etherpadlite")
-  con.close
+gem_package "mysql" do
+  action :install
 end
+Gems.clear_paths
+require 'rubygems'
+require 'mysql'
+con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
+
+#Creating the database for etherpad lite
+con.query("create database etherpadlite")
+con.close
 
 rs_utils_marker :end
