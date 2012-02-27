@@ -1,78 +1,78 @@
 {
-  "providing": {
-  },
-  "suggestions": {
-  },
-  "platforms": {
-  },
-  "maintainer": "Arangamanikkannan Manickam",
-  "version": "0.0.1",
   "replacing": {
+  },
+  "description": "Installs/Configures etherpadlite",
+  "dependencies": {
+    "mysql": ">= 0.0.0",
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0"
+  },
+  "maintainer_email": "arangamani.kannan@gmail.com",
+  "groupings": {
+  },
+  "recipes": {
+    "etherpadlite::stop_pad": "Stopd the pad",
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::prepare_db": "Prepares the mysql database for etherpadlite",
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
   },
   "conflicting": {
   },
-  "recommendations": {
+  "platforms": {
   },
-  "dependencies": {
-    "node": ">= 0.0.0",
-    "rs_utils": ">= 0.0.0",
-    "mysql": ">= 0.0.0"
-  },
-  "name": "etherpadlite",
   "attributes": {
-    "etherpadlite/logfile": {
-      "default": "etherpadlite.log",
-      "type": "string",
-      "display_name": "Log file for etherpad lite",
-      "description": "This file is used for looging all communication messages related to etherpad lite",
-      "calculated": false,
-      "recipes": [
-
-      ],
+    "etherpadlite/port": {
+      "description": "The port number etherpad lite should be used to bind",
       "choice": [
 
       ],
-      "required": "optional"
+      "default": "80",
+      "calculated": false,
+      "required": "optional",
+      "display_name": "Port Number",
+      "type": "string",
+      "recipes": [
+
+      ]
     },
     "etherpadlite/ipaddress": {
-      "default": "0.0.0.0",
-      "type": "string",
-      "display_name": "IP address to bind",
       "description": "The IP address etherpad lite should be used to bind",
-      "calculated": false,
-      "recipes": [
-
-      ],
       "choice": [
 
       ],
-      "required": "optional"
-    },
-    "etherpadlite/port": {
-      "default": "80",
+      "default": "0.0.0.0",
+      "calculated": false,
+      "required": "optional",
+      "display_name": "IP address to bind",
       "type": "string",
-      "display_name": "Port Number",
-      "description": "The port number etherpad lite should be used to bind",
-      "calculated": false,
       "recipes": [
 
-      ],
+      ]
+    },
+    "etherpadlite/logfile": {
+      "description": "This file is used for looging all communication messages related to etherpad lite",
       "choice": [
 
       ],
-      "required": "optional"
+      "default": "etherpadlite.log",
+      "calculated": false,
+      "required": "optional",
+      "display_name": "Log file for etherpad lite",
+      "type": "string",
+      "recipes": [
+
+      ]
     }
   },
+  "recommendations": {
+  },
+  "providing": {
+  },
+  "long_description": "Description\n===========\nThis cookbook installs etherpad-lite from source. This cookbook downloads the source, compiles and installs it. There is also recipes available to start and stop the pad.\n\nThe daemonize program is used to run the pad. This program is used to run any process as a unix daemon. \nRequirements\n============\n* node.js\n  * python >= 2.7.1\n* mysql\n* rs_utils\nAttributes\n==========\netherpadlite/logfile -> File name to store the communication log messages. The default is etherpadlite.log\n\netherpadlite/ipaddress -> The IP address etherpad lite should be used to bind. The default is 0.0.0.0 (localhost)\n\netherpadlite/port -> The port number etherpad lite should be used to bind. The default is 80\n\nUsage\n=====\nInstall the dependencies and start using the recipies. The following recipies are available.\n\n1. prepare_pad: This recipe prepares the pad by downloading the source, compiling it, and making it ready to be started.\n2. prepare_db: This recipe prepares the database to be used for mysql based etherpadlite. It also installs the latest version of ruby from source as the mysql gem requires version 1.8.7 or higher. Once ruby is installed, the mysql gem is installed. And then a small script is used to create database named 'etherpadlite'.\n3. start_pad: This recipe installs daemonize program and then starts the program using daemonize. The daemonize uses the a log file to catch the output. This daemonize also stores the pid of the started process in a pid file.\n4. stop_pad: The process is killed with the help of pid file created in the last step.\n",
+  "name": "etherpadlite",
+  "suggestions": {
+  },
   "license": "Apache 2.0",
-  "description": "Installs/Configures etherpadlite",
-  "recipes": {
-    "etherpadlite::stop_pad": "Stopd the pad",
-    "etherpadlite::prepare_db": "Prepares the mysql database for etherpadlite",
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "groupings": {
-  },
-  "maintainer_email": "arangamani.kannan@gmail.com"
+  "version": "0.0.1",
+  "maintainer": "Arangamanikkannan Manickam"
 }
