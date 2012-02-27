@@ -30,7 +30,7 @@ bash "update_ruby_and_install_mysql_gem" do
     ./configure --prefix=/usr
     make
     make install
-    gem install mysql
+    gem install mysql -v 2.8.1
   EOH
 end
 
