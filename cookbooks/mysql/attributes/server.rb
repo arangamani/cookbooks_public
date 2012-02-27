@@ -21,8 +21,8 @@ default['mysql']['bind_address']               = attribute?('cloud') ? cloud['lo
 
 case node["platform"]
 when "centos", "redhat", "fedora", "suse", "scientific", "amazon"
-  default['mysql']['package_name']            = "mysql-server"
-  default['mysql']['service_name']            = "mysqld"
+  default['mysql']['package_name']            = "MySQL-server-community"
+  default['mysql']['service_name']            = "mysql"
   default['mysql']['basedir']                 = "/usr"
   default['mysql']['data_dir']                = "/var/lib/mysql"
   default['mysql']['root_group']              = "root"
