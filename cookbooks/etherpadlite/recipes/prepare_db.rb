@@ -21,44 +21,28 @@
 
 rs_utils_marker :begin
 
-mysql_connection_info = {:host => "localhost", :username => 'root', :password => node['mysql']['server_root_password']}
-
-
-begin
-  gem_package "mysql" do
-    action :install
-  end
-  Gem.clear_paths  
-  require 'mysql'
-  m=Mysql.new("localhost","root",node['mysql']['server_root_password']) 
-
-  if m.list_dbs.include?("etherpadlite") == false
-    # create etherpad-lite database
-    mysql_database 'etherpadlite' do
-      connection mysql_connection_info
-      action :create
-      notifies :create, "template[/var/etherpad-lite/settings.json]"
-    end
-
-    # create etherpad-lite user
-    mysql_database_user 'etherpadlite' do
-      connection mysql_connection_info
-      password node[:etherpadlite][:db_password]
-      action :create
-    end
-
-    # Grant etherpad-lite
-    mysql_database_user 'etherpadlite' do
-      connection mysql_connection_info
-      password node[:etherpadlite][:db_password]
-      database_name 'etherpadlite'
-      host 'localhost'
-      privileges [:select,:update,:insert,:create,:drop,:delete]
-      action :grant
-    end
-  end
-rescue LoadError
-  Chef::Log.info("Missing gem 'mysql'")
+bash "update_ruby" do
+  code <<-EOH
+    cwd "/var/"
+    git clone git://github.com/arangamani/ruby.git
+    cd ruby
+    git checkout "ruby_1_8_7"
+    ./configure --prefix=/usr
+    make
+    make install
+  EOH
 end
+
+gem_package "mysql" do
+    action :install
+end
+
+require 'rubygems'
+require 'mysql'
+con = Mysql.new('localhost', 'root', #{node[:mysql][:server_root_password]}, '')
+
+#Creating the database for etherpad lite
+con.query("create database etherpadlite")
+con.close
 
 rs_utils_marker :end

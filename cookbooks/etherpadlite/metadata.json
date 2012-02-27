@@ -1,90 +1,78 @@
 {
-  "maintainer": "Arangamanikkannan Manickam",
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "description": "Installs/Configures etherpadlite",
-  "version": "0.0.1",
   "providing": {
-  },
-  "dependencies": {
-    "rs_utils": ">= 0.0.0",
-    "node": ">= 0.0.0"
-  },
-  "recipes": {
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
-    "etherpadlite::prepare_db": "Prepares the mysql database for etherpadlite",
-    "etherpadlite::stop_pad": "Stopd the pad",
-    "etherpadlite::start_pad": "Start the pad"
-  },
-  "platforms": {
-  },
-  "license": "Apache 2.0",
-  "attributes": {
-    "etherpadlite/ipaddress": {
-      "choice": [
-
-      ],
-      "default": "0.0.0.0",
-      "description": "The IP address etherpad lite should be used to bind",
-      "calculated": false,
-      "display_name": "IP address to bind",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "required": "optional"
-    },
-    "etherpadlite/port": {
-      "choice": [
-
-      ],
-      "default": "80",
-      "description": "The port number etherpad lite should be used to bind",
-      "calculated": false,
-      "display_name": "Port Number",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "required": "optional"
-    },
-    "etherpadlite/db_password": {
-      "choice": [
-
-      ],
-      "description": "Password for the database user that etherpad lite is supposed to use",
-      "calculated": false,
-      "display_name": "Database password",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "required": "required"
-    },
-    "etherpadlite/logfile": {
-      "choice": [
-
-      ],
-      "default": "etherpadlite.log",
-      "description": "This file is used for looging all communication messages related to etherpad lite",
-      "calculated": false,
-      "display_name": "Log file for etherpad lite",
-      "recipes": [
-
-      ],
-      "type": "string",
-      "required": "optional"
-    }
-  },
-  "recommendations": {
-  },
-  "groupings": {
-  },
-  "replacing": {
   },
   "suggestions": {
   },
-  "name": "etherpadlite",
+  "platforms": {
+  },
+  "maintainer": "Arangamanikkannan Manickam",
+  "version": "0.0.1",
+  "replacing": {
+  },
   "conflicting": {
   },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n"
+  "recommendations": {
+  },
+  "dependencies": {
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0",
+    "mysql": ">= 0.0.0"
+  },
+  "name": "etherpadlite",
+  "attributes": {
+    "etherpadlite/logfile": {
+      "default": "etherpadlite.log",
+      "type": "string",
+      "display_name": "Log file for etherpad lite",
+      "description": "This file is used for looging all communication messages related to etherpad lite",
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "choice": [
+
+      ],
+      "required": "optional"
+    },
+    "etherpadlite/ipaddress": {
+      "default": "0.0.0.0",
+      "type": "string",
+      "display_name": "IP address to bind",
+      "description": "The IP address etherpad lite should be used to bind",
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "choice": [
+
+      ],
+      "required": "optional"
+    },
+    "etherpadlite/port": {
+      "default": "80",
+      "type": "string",
+      "display_name": "Port Number",
+      "description": "The port number etherpad lite should be used to bind",
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "choice": [
+
+      ],
+      "required": "optional"
+    }
+  },
+  "license": "Apache 2.0",
+  "description": "Installs/Configures etherpadlite",
+  "recipes": {
+    "etherpadlite::stop_pad": "Stopd the pad",
+    "etherpadlite::prepare_db": "Prepares the mysql database for etherpadlite",
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "groupings": {
+  },
+  "maintainer_email": "arangamani.kannan@gmail.com"
 }

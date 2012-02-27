@@ -11,6 +11,7 @@ recipe		 "etherpadlite::stop_pad", "Stopd the pad"
 
 depends "node"
 depends "rs_utils"
+depends "mysql"
 
 attribute "etherpadlite/logfile",
   :display_name => "Log file for etherpad lite",
@@ -26,8 +27,3 @@ attribute "etherpadlite/port",
   :display_name => "Port Number",
   :description => "The port number etherpad lite should be used to bind",
   :default => "80"
-
-attribute "etherpadlite/db_password",
-  :display_name => "Database password",
-  :description => "Password for the database user that etherpad lite is supposed to use",
-  :required => "required"
