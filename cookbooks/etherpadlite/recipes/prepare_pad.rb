@@ -29,7 +29,7 @@ bash "get_etherpadlite_source" do
   code <<-EOH
     git clone git://github.com/arangamani/etherpad-lite.git
     cd etherpad-lite
-    git checkout "for_cooking"
+    git checkout "for_cooking_mysql"
   EOH
 end
 
