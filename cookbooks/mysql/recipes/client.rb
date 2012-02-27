@@ -38,7 +38,7 @@ end
 
 mysql_packages.each do |mysql_pack|
   package mysql_pack do
-    version "5.1.55-1.rhel5" if mysql_pack = "MySQL-server-community"
+    version "0:5.1.55-1.rhel5" if mysql_pack = "MySQL-server-community"
     action :install
   end
 end
