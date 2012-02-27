@@ -21,7 +21,7 @@
 
 rs_utils_marker :begin
 
-bash "update_ruby" do
+bash "update_ruby_and_install_mysql_gem" do
   cwd "/var/"
   code <<-EOH
     git clone git://github.com/arangamani/ruby.git
