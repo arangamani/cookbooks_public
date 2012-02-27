@@ -38,8 +38,8 @@ end
 #  action :install
 #end
 Gem.clear_paths
-require 'rubygems'
-require 'mysql'
+`cp /usr/lib/ruby/gems/1.8/gems/mysql-2.8.1/lib/mysql_api.so .`
+require './mysql_api'
 con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
 
 #Creating the database for etherpad lite
