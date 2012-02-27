@@ -16,8 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#This recipe installs the prerequisites for etherpad lite and start the pad
+#as a daemon instead of a process.
+#
 
 rs_utils_marker :begin
+
+#Install daemonize for running the pad as a daemon
 
 case node[:platform]
   when "centos", "redhat", "fedora"
@@ -41,6 +46,12 @@ case node[:platform]
       EOH
     end
 end
+
+#STARTING THE PAD
+#Running the pad as in a script doesn't let the script to exit and hence the script fails. 
+#Daemonizing the pad and leaving the pid in a file allows us to kill the server whenever possible. 
+#Absolute path of node should be used here.
+#
 
 bash "start_pad" do
   cwd "/var/etherpad-lite/node"

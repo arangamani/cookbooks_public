@@ -1,155 +1,90 @@
 {
-  "license": "Apache 2.0",
   "maintainer_email": "arangamani.kannan@gmail.com",
+  "name": "etherpadlite",
+  "version": "0.0.1",
   "groupings": {
   },
-  "suggestions": {
+  "conflicting": {
   },
-  "recommendations": {
+  "dependencies": {
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0"
   },
-  "version": "0.0.1",
   "attributes": {
-    "etherpadlite/dbtype": {
-      "choice": [
-
-      ],
-      "default": "dirty",
-      "required": "optional",
-      "type": "string",
-      "display_name": "Database Type",
-      "calculated": false,
-      "description": "The type of database should be used. Choose dirty for development and testing purposes. Choose mysql for anything other than development or testing",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/dbuser": {
-      "choice": [
-
-      ],
-      "required": "optional",
-      "type": "string",
-      "display_name": "Database user",
-      "calculated": false,
-      "description": "User should be used to access the database",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/logfile": {
-      "choice": [
-
-      ],
-      "default": "/var/log/etherpadlite.log",
-      "required": "optional",
-      "type": "string",
-      "display_name": "Log file for etherpad lite",
-      "calculated": false,
-      "description": "This file is used for looging all communication messages related to etherpad lite",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/dbhost": {
-      "choice": [
-
-      ],
-      "required": "optional",
-      "type": "string",
-      "display_name": "Database host",
-      "calculated": false,
-      "description": "Hostname of the database",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/ipaddress": {
-      "choice": [
-
-      ],
-      "default": "0.0.0.0",
-      "required": "optional",
-      "type": "string",
-      "display_name": "IP address to bind",
-      "calculated": false,
-      "description": "The IP address etherpad lite should be used to bind",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/dirtyfile": {
-      "choice": [
-
-      ],
-      "default": "/var/dirty.db",
-      "required": "optional",
-      "type": "string",
-      "display_name": "File name for dirty database file",
-      "calculated": false,
-      "description": "Dirty database file is used for storing all the database where a mysql database is not present",
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/database": {
-      "choice": [
-
-      ],
-      "required": "optional",
-      "type": "string",
-      "display_name": "Database name",
-      "calculated": false,
-      "description": "Database name to be used with etherpad lite",
-      "recipes": [
-
-      ]
-    },
     "etherpadlite/port": {
+      "required": "optional",
+      "calculated": false,
       "choice": [
+
+      ],
+      "display_name": "Port Number",
+      "recipes": [
 
       ],
       "default": "80",
-      "required": "optional",
-      "type": "string",
-      "display_name": "Port Number",
-      "calculated": false,
       "description": "The port number etherpad lite should be used to bind",
-      "recipes": [
-
-      ]
+      "type": "string"
     },
-    "etherpadlite/dbpassword": {
+    "etherpadlite/logfile": {
+      "required": "optional",
+      "calculated": false,
       "choice": [
 
       ],
-      "required": "optional",
-      "type": "string",
-      "display_name": "Database password",
-      "calculated": false,
-      "description": "The password should be used to connecting to the database",
+      "display_name": "Log file for etherpad lite",
       "recipes": [
 
-      ]
+      ],
+      "default": "/var/log/etherpadlite.log",
+      "description": "This file is used for looging all communication messages related to etherpad lite",
+      "type": "string"
+    },
+    "etherpadlite/dbfile": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "File name for dirty database file",
+      "recipes": [
+
+      ],
+      "default": "/var/etherpad-lite/dbfile.db",
+      "description": "Dirty database file is used for storing all the database where a mysql database is not present",
+      "type": "string"
+    },
+    "etherpadlite/ipaddress": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "IP address to bind",
+      "recipes": [
+
+      ],
+      "default": "0.0.0.0",
+      "description": "The IP address etherpad lite should be used to bind",
+      "type": "string"
     }
   },
-  "replacing": {
-  },
-  "name": "etherpadlite",
-  "maintainer": "Arangamanikkannan Manicka",
-  "description": "Installs/Configures etherpadlite",
-  "dependencies": {
-    "rs_utils": ">= 0.0.0",
-    "node": ">= 0.0.0"
+  "providing": {
   },
   "platforms": {
   },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "providing": {
-  },
   "recipes": {
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
+    "etherpadlite::stop_pad": "Stopd the pad",
+    "etherpadlite::start_pad": "Start the pad"
   },
-  "conflicting": {
+  "license": "Apache 2.0",
+  "maintainer": "Arangamanikkannan Manicka",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "description": "Installs/Configures etherpadlite",
+  "recommendations": {
+  },
+  "replacing": {
+  },
+  "suggestions": {
   }
 }

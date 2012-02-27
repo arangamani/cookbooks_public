@@ -16,6 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+#This recipe downloads the etherpad lite source from github and compiles the source.
+#Installs etherpad lite and makes it ready to be started.
+#
 
 rs_utils_marker :begin
 
@@ -30,8 +33,16 @@ bash "get_etherpadlite_source" do
   EOH
 end
 
+bash "apply_settings_json" do
+  cwd "/var/etherpad-lite"
+  code <<-EOH
+    sed -i 's/rightscale_ip/#{node[:etherpadlite][:ipaddress]}/g' settings.json
+    sed -i 's/rightscale_port/#{node[:etherpadlite][port]}/g' settings.json
+    sed -i 's/rightscale_filename/#{node[:etherpadlite][:dbfile]}/g' settings.json
+  EOH
+end
+
 bash "etherpadlite_install_deps" do
-  user "root"
   cwd "/var/etherpad-lite/"
   code <<-EOH
     sh bin/installDeps.sh
