@@ -21,6 +21,9 @@
 
 rs_utils_marker :begin
 
+include_recipe "mysql::client"
+include_recipe "mysql::server"
+
 mysql_connection_info = {:host => "localhost", :username => 'root', :password => node['mysql']['server_root_password']}
 
 
