@@ -38,7 +38,7 @@ begin
     action :install
   end
   Gem.clear_paths
-
+  require 'rubygems'
   require 'mysql'
   con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
 
