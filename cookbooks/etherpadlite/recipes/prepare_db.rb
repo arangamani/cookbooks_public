@@ -50,7 +50,7 @@ begin
     # Grant etherpad-lite
     mysql_database_user 'etherpadlite' do
       connection mysql_connection_info
-      password node[:etherpadlite][:database][:password]
+      password node[:etherpadlite][:db_password]
       database_name 'etherpadlite'
       host 'localhost'
       privileges [:select,:update,:insert,:create,:drop,:delete]
