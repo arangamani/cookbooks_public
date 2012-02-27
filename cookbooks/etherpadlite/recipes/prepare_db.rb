@@ -34,12 +34,7 @@ bash "update_ruby_and_install_mysql_gem" do
   EOH
 end
 
-#begin
-#  gem_package "mysql" do
-#    action :install
-#  end
-#  Gem.clear_paths
-#  require 'rubygems'
+begin
   `cp /usr/lib/ruby/gems/1.8/gems/mysql-2.8.1/lib/mysql_api.so .`
   require './mysql_api'
   con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
@@ -48,8 +43,8 @@ end
   con.query("drop database if exists etherpadlite")
   con.query("create database etherpadlite")
   con.close
-#  rescue LoadError
-#    Chef::Log.info("Missing gem 'mysql'")
-#end
+  rescue LoadError
+    Chef::Log.info("Missing gem 'mysql'")
+end
 
 rs_utils_marker :end
