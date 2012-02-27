@@ -14,23 +14,19 @@ depends "rs_utils"
 attribute "etherpadlite/logfile",
   :display_name => "Log file for etherpad lite",
   :description => "This file is used for looging all communication messages related to etherpad lite",
-  :default => "/var/log/etherpadlite.log",
   :required => "required"
 
 attribute "etherpadlite/ipaddress",
   :display_name => "IP address to bind",
   :description => "The IP address etherpad lite should be used to bind",
-  :default => "0.0.0.0",
   :required => "required"
 
 attribute "etherpadlite/port",
   :display_name => "Port Number",
   :description => "The port number etherpad lite should be used to bind",
-  :default => "80",
   :required => "required"
 
 attribute "etherpadlite/dbfile",
   :display_name => "File name for dirty database file",
   :description => "Dirty database file is used for storing all the database where a mysql database is not present",
-  :default => "/var/etherpad-lite/dbfile.db",
   :required => "required"

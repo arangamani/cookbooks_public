@@ -56,8 +56,8 @@ end
 bash "start_pad" do
   cwd "/var/etherpad-lite/node"
   code <<-EOH
-    touch #{node[:etherpadlite][:logfile]}
-    daemonize -o #{node[:etherpadlite][:logfile]} -c /var/etherpad-lite/node -p /var/etherpad-lite/etherpadlited /usr/bin/node /var/etherpad-lite/node/server.js
+    touch /var/log/#{node[:etherpadlite][:logfile]}
+    daemonize -o /var/log/#{node[:etherpadlite][:logfile]} -c /var/etherpad-lite/node -p /var/etherpad-lite/etherpadlited /usr/bin/node /var/etherpad-lite/node/server.js
   EOH
 end
 

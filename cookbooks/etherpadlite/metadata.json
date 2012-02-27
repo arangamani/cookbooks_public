@@ -1,90 +1,86 @@
 {
-  "attributes": {
-    "etherpadlite/ipaddress": {
-      "type": "string",
-      "choice": [
-
-      ],
-      "required": "required",
-      "default": "0.0.0.0",
-      "recipes": [
-
-      ],
-      "display_name": "IP address to bind",
-      "calculated": false,
-      "description": "The IP address etherpad lite should be used to bind"
-    },
-    "etherpadlite/port": {
-      "type": "string",
-      "choice": [
-
-      ],
-      "required": "required",
-      "default": "80",
-      "recipes": [
-
-      ],
-      "display_name": "Port Number",
-      "calculated": false,
-      "description": "The port number etherpad lite should be used to bind"
-    },
-    "etherpadlite/logfile": {
-      "type": "string",
-      "choice": [
-
-      ],
-      "required": "required",
-      "default": "/var/log/etherpadlite.log",
-      "recipes": [
-
-      ],
-      "display_name": "Log file for etherpad lite",
-      "calculated": false,
-      "description": "This file is used for looging all communication messages related to etherpad lite"
-    },
-    "etherpadlite/dbfile": {
-      "type": "string",
-      "choice": [
-
-      ],
-      "required": "required",
-      "default": "/var/etherpad-lite/dbfile.db",
-      "recipes": [
-
-      ],
-      "display_name": "File name for dirty database file",
-      "calculated": false,
-      "description": "Dirty database file is used for storing all the database where a mysql database is not present"
-    }
-  },
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "recipes": {
-    "etherpadlite::stop_pad": "Stopd the pad",
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite"
-  },
   "groupings": {
   },
+  "maintainer": "Arangamanikkannan Manicka",
   "replacing": {
   },
+  "maintainer_email": "arangamani.kannan@gmail.com",
+  "description": "Installs/Configures etherpadlite",
+  "version": "0.0.1",
+  "providing": {
+  },
+  "recommendations": {
+  },
+  "name": "etherpadlite",
   "conflicting": {
   },
   "dependencies": {
-    "rs_utils": ">= 0.0.0",
-    "node": ">= 0.0.0"
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0"
+  },
+  "platforms": {
+  },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "recipes": {
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
+    "etherpadlite::stop_pad": "Stopd the pad"
+  },
+  "attributes": {
+    "etherpadlite/dbfile": {
+      "type": "string",
+      "description": "Dirty database file is used for storing all the database where a mysql database is not present",
+      "display_name": "File name for dirty database file",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "etherpadlite/logfile": {
+      "type": "string",
+      "description": "This file is used for looging all communication messages related to etherpad lite",
+      "display_name": "Log file for etherpad lite",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "etherpadlite/port": {
+      "type": "string",
+      "description": "The port number etherpad lite should be used to bind",
+      "display_name": "Port Number",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    },
+    "etherpadlite/ipaddress": {
+      "type": "string",
+      "description": "The IP address etherpad lite should be used to bind",
+      "display_name": "IP address to bind",
+      "required": "required",
+      "choice": [
+
+      ],
+      "calculated": false,
+      "recipes": [
+
+      ]
+    }
   },
   "license": "Apache 2.0",
-  "name": "etherpadlite",
-  "recommendations": {
-  },
   "suggestions": {
-  },
-  "providing": {
-  },
-  "maintainer": "Arangamanikkannan Manicka",
-  "version": "0.0.1",
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "description": "Installs/Configures etherpadlite",
-  "platforms": {
   }
 }

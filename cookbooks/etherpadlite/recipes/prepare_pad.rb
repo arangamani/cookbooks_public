@@ -37,8 +37,8 @@ bash "apply_settings_json" do
   cwd "/var/etherpad-lite"
   code <<-EOH
     sed -i 's/rightscale_ip/#{node[:etherpadlite][:ipaddress]}/g' settings.json
-    sed -i 's/rightscale_port/#{node[:etherpadlite][port]}/g' settings.json
-    sed -i 's/rightscale_filename/#{node[:etherpadlite][:dbfile]}/g' settings.json
+    sed -i 's/rightscale_port/#{node[:etherpadlite][:port]}/g' settings.json
+    sed -i 's/rightscale_filename/\/var\/etherpad-lite\/#{node[:etherpadlite][:dbfile]}/g' settings.json
   EOH
 end
 
