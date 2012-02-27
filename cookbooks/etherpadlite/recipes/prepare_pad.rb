@@ -38,7 +38,7 @@ bash "apply_settings_json" do
   code <<-EOH
     sed -i 's/rightscale_ip/#{node[:etherpadlite][:ipaddress]}/g' settings.json
     sed -i 's/rightscale_port/#{node[:etherpadlite][:port]}/g' settings.json
-    sed -i 's/rightscale_dbfile/#{node[:etherpadlite][:dbfile]}/g' settings.json
+    sed -i 's/rightscale_db_password/#{node[:etherpadlite][:db_password]}/g' settings.json
   EOH
 end
 
