@@ -23,7 +23,7 @@
 
 mysql_packages = case node['platform']
 when "centos", "redhat", "suse", "fedora", "scientific", "amazon"
-  %w{mysql mysql-devel}
+  %w{Mysql-server-community MySQL-client-community MySQL-devel-community}
 when "ubuntu","debian"
   if debian_before_squeeze? || ubuntu_before_lucid?
     %w{mysql-client libmysqlclient15-dev}
