@@ -39,10 +39,10 @@ end
 
 require 'rubygems'
 require 'mysql'
-con = Mysql.new('localhost', 'root', #{node[:mysql][:server_root_password]}, '')
+con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
 
 #Creating the database for etherpad lite
 con.query("create database etherpadlite")
-#con.close
+con.close
 
 rs_utils_marker :end
