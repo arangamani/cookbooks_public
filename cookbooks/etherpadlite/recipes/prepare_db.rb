@@ -30,12 +30,13 @@ bash "update_ruby" do
     ./configure --prefix=/usr
     make
     make install
+    gem install mysql
   EOH
 end
 
-gem_package "mysql" do
-  action :install
-end
+#gem_package "mysql" do
+#  action :install
+#end
 Gem.clear_paths
 require 'rubygems'
 require 'mysql'
