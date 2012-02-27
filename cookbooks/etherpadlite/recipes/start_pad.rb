@@ -22,6 +22,8 @@
 
 rs_utils_marker :begin
 
+include_recipe "etherpadlite::prepare_db"
+
 #Install daemonize for running the pad as a daemon
 
 case node[:platform]
