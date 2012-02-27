@@ -16,7 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-#This recipe stops the running instance of etherpad lite
+#This recipe prepares the database for running etherpad lite with mysql DB
 #
 
 rs_utils_marker :begin
@@ -33,16 +33,18 @@ bash "update_ruby" do
   EOH
 end
 
-gem_package "mysql" do
+begin
+  gem_package "mysql" do
     action :install
+  end
+
+  require 'rubygems'
+  require 'mysql'
+  con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
+
+  #Creating the database for etherpad lite
+  con.query("create database etherpadlite")
+  con.close
 end
-
-require 'rubygems'
-require 'mysql'
-con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
-
-#Creating the database for etherpad lite
-con.query("create database etherpadlite")
-con.close
 
 rs_utils_marker :end
