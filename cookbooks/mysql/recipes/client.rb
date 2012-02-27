@@ -23,7 +23,7 @@
 
 mysql_packages = case node['platform']
 when "centos", "redhat", "suse", "fedora", "scientific", "amazon"
-  %w{MySQL-server-community MySQL-client-community MySQL-devel-community}
+  %w{MySQL-client-community MySQL-devel-community}
 when "ubuntu","debian"
   if debian_before_squeeze? || ubuntu_before_lucid?
     %w{mysql-client libmysqlclient15-dev}
@@ -38,7 +38,6 @@ end
 
 mysql_packages.each do |mysql_pack|
   package mysql_pack do
-    version "5.1.55-1.rhel5" if mysql_pack = "MySQL-server-community"
     action :install
   end
 end
