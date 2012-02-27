@@ -25,7 +25,6 @@ include_recipe "mysql::client"
 node.set_unless['mysql']['server_debian_password'] = secure_password
 node.set_unless['mysql']['server_root_password']   = secure_password
 node.set_unless['mysql']['server_repl_password']   = secure_password
-node.set_unless['mysql']['service_name'] = "mysql"
 
 if platform?(%w{debian ubuntu})
 
@@ -77,7 +76,7 @@ service "mysql" do
     start_command "start mysql"
   end
   supports :status => true, :restart => true, :reload => true
-  action :nothing
+  action :start
 end
 
 skip_federated = case node['platform']
