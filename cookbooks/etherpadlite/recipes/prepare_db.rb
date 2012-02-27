@@ -45,6 +45,7 @@ end
   con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
 
   # Creating the database for etherpad lite
+  con.query("drop database if exists etherpadlite")
   con.query("create database etherpadlite")
   con.close
 #  rescue LoadError
