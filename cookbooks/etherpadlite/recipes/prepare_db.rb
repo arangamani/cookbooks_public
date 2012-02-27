@@ -30,20 +30,23 @@ bash "update_ruby" do
     ./configure --prefix=/usr
     make
     make install
-    gem install mysql
   EOH
 end
 
-#gem_package "mysql" do
-#  action :install
-#end
-Gem.clear_paths
-`cp /usr/lib/ruby/gems/1.8/gems/mysql-2.8.1/lib/mysql_api.so .`
-require './mysql_api'
-con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
+begin
+  gem_package "mysql" do
+    action :install
+  end
+  Gem.clear_paths
 
-#Creating the database for etherpad lite
-con.query("create database etherpadlite")
-con.close
+  require 'mysql'
+  con = Mysql.new('localhost', 'root', node[:mysql][:server_root_password], '')
+
+  # Creating the database for etherpad lite
+  con.query("create database etherpadlite")
+  con.close
+  rescue LoadError
+    Chef::Log.info("Missing gem 'mysql'")
+end
 
 rs_utils_marker :end
