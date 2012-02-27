@@ -1,90 +1,90 @@
 {
+  "recipes": {
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
+    "etherpadlite::stop_pad": "Stopd the pad"
+  },
+  "replacing": {
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "node": ">= 0.0.0",
+    "rs_utils": ">= 0.0.0"
+  },
+  "description": "Installs/Configures etherpadlite",
+  "maintainer_email": "arangamani.kannan@gmail.com",
+  "maintainer": "Arangamanikkannan Manicka",
+  "conflicting": {
+  },
+  "groupings": {
+  },
   "suggestions": {
   },
+  "platforms": {
+  },
+  "license": "Apache 2.0",
+  "name": "etherpadlite",
+  "providing": {
+  },
+  "long_description": "Description\n===========\nThis cookbook installs etherpad-lite from source. This cookbook downloads the source, compiles and installs it. There is also recipes available to start and stop the pad.\n\nThe daemonize program is used to run the pad. This program is used to run any process as a unix daemon. \nRequirements\n============\n* node.js\n  * python >= 2.7.1\n* rs_utils\nAttributes\n==========\netherpadlite/logfile -> File name to store the communication log messages. The default is etherpadlite.log\n\netherpadlite/ipaddress -> The IP address etherpad lite should be used to bind. The default is 0.0.0.0 (localhost)\n\netherpadlite/port -> The port number etherpad lite should be used to bind. The default is 80\n\nUsage\n=====\nInstall the dependencies and start using the recipies. The following recipies are available.\n\n1. prepare_pad: This recipe prepares the pad by downloading the source, compiling it, and making it ready to be started.\n2. start_pad: This recipe installs daemonize program and then starts the program using daemonize. The daemonize uses the a log file to catch the output. This daemonize also stores the pid of the started process in a pid file.\n3. stop_pad: The process is killed with the help of pid file created in the last step.\n",
   "attributes": {
-    "etherpadlite/port": {
-      "recipes": [
-
-      ],
-      "default": "80",
-      "required": "optional",
-      "calculated": false,
-      "type": "string",
-      "description": "The port number etherpad lite should be used to bind",
-      "choice": [
-
-      ],
-      "display_name": "Port Number"
-    },
-    "etherpadlite/ipaddress": {
-      "recipes": [
-
-      ],
-      "default": "0.0.0.0",
-      "required": "optional",
-      "calculated": false,
-      "type": "string",
-      "description": "The IP address etherpad lite should be used to bind",
-      "choice": [
-
-      ],
-      "display_name": "IP address to bind"
-    },
     "etherpadlite/logfile": {
+      "default": "etherpadlite.log",
       "recipes": [
 
       ],
-      "default": "etherpadlite.log",
-      "required": "optional",
-      "calculated": false,
       "type": "string",
       "description": "This file is used for looging all communication messages related to etherpad lite",
+      "required": "optional",
+      "calculated": false,
       "choice": [
 
       ],
       "display_name": "Log file for etherpad lite"
     },
     "etherpadlite/dbfile": {
+      "default": "dbfile.db",
       "recipes": [
 
       ],
-      "default": "dbfile.db",
-      "required": "optional",
-      "calculated": false,
       "type": "string",
       "description": "Dirty database file is used for storing all the database where a mysql database is not present",
+      "required": "optional",
+      "calculated": false,
       "choice": [
 
       ],
       "display_name": "File name for dirty database file"
+    },
+    "etherpadlite/ipaddress": {
+      "default": "0.0.0.0",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "The IP address etherpad lite should be used to bind",
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "IP address to bind"
+    },
+    "etherpadlite/port": {
+      "default": "80",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "The port number etherpad lite should be used to bind",
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "display_name": "Port Number"
     }
   },
   "recommendations": {
-  },
-  "maintainer": "Arangamanikkannan Manicka",
-  "recipes": {
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::stop_pad": "Stopd the pad"
-  },
-  "license": "Apache 2.0",
-  "groupings": {
-  },
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "conflicting": {
-  },
-  "dependencies": {
-    "node": ">= 0.0.0",
-    "rs_utils": ">= 0.0.0"
-  },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "version": "0.0.1",
-  "platforms": {
-  },
-  "description": "Installs/Configures etherpadlite",
-  "name": "etherpadlite",
-  "replacing": {
-  },
-  "providing": {
   }
 }
