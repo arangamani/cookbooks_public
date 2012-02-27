@@ -22,21 +22,22 @@
 rs_utils_marker :begin
 
 bash "update_ruby" do
+  cwd "/var/"
   code <<-EOH
-    cwd "/var/"
     git clone git://github.com/arangamani/ruby.git
     cd ruby
     git checkout "ruby_1_8_7"
     ./configure --prefix=/usr
     make
     make install
+    gem install mysql
   EOH
 end
 
 begin
-  gem_package "mysql" do
-    action :install
-  end
+#  gem_package "mysql" do
+#    action :install
+#  end
   Gem.clear_paths
   require 'rubygems'
   require 'mysql'
