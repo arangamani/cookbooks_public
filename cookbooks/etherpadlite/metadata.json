@@ -1,86 +1,90 @@
 {
-  "groupings": {
+  "suggestions": {
   },
-  "maintainer": "Arangamanikkannan Manicka",
-  "replacing": {
-  },
-  "maintainer_email": "arangamani.kannan@gmail.com",
-  "description": "Installs/Configures etherpadlite",
-  "version": "0.0.1",
-  "providing": {
+  "attributes": {
+    "etherpadlite/port": {
+      "recipes": [
+
+      ],
+      "default": "80",
+      "required": "optional",
+      "calculated": false,
+      "type": "string",
+      "description": "The port number etherpad lite should be used to bind",
+      "choice": [
+
+      ],
+      "display_name": "Port Number"
+    },
+    "etherpadlite/ipaddress": {
+      "recipes": [
+
+      ],
+      "default": "0.0.0.0",
+      "required": "optional",
+      "calculated": false,
+      "type": "string",
+      "description": "The IP address etherpad lite should be used to bind",
+      "choice": [
+
+      ],
+      "display_name": "IP address to bind"
+    },
+    "etherpadlite/logfile": {
+      "recipes": [
+
+      ],
+      "default": "etherpadlite.log",
+      "required": "optional",
+      "calculated": false,
+      "type": "string",
+      "description": "This file is used for looging all communication messages related to etherpad lite",
+      "choice": [
+
+      ],
+      "display_name": "Log file for etherpad lite"
+    },
+    "etherpadlite/dbfile": {
+      "recipes": [
+
+      ],
+      "default": "dbfile.db",
+      "required": "optional",
+      "calculated": false,
+      "type": "string",
+      "description": "Dirty database file is used for storing all the database where a mysql database is not present",
+      "choice": [
+
+      ],
+      "display_name": "File name for dirty database file"
+    }
   },
   "recommendations": {
   },
-  "name": "etherpadlite",
+  "maintainer": "Arangamanikkannan Manicka",
+  "recipes": {
+    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
+    "etherpadlite::start_pad": "Start the pad",
+    "etherpadlite::stop_pad": "Stopd the pad"
+  },
+  "license": "Apache 2.0",
+  "groupings": {
+  },
+  "maintainer_email": "arangamani.kannan@gmail.com",
   "conflicting": {
   },
   "dependencies": {
     "node": ">= 0.0.0",
     "rs_utils": ">= 0.0.0"
   },
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "version": "0.0.1",
   "platforms": {
   },
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "recipes": {
-    "etherpadlite::start_pad": "Start the pad",
-    "etherpadlite::prepare_pad": "Installs and prepares etherpad lite",
-    "etherpadlite::stop_pad": "Stopd the pad"
+  "description": "Installs/Configures etherpadlite",
+  "name": "etherpadlite",
+  "replacing": {
   },
-  "attributes": {
-    "etherpadlite/dbfile": {
-      "type": "string",
-      "description": "Dirty database file is used for storing all the database where a mysql database is not present",
-      "display_name": "File name for dirty database file",
-      "required": "required",
-      "choice": [
-
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/logfile": {
-      "type": "string",
-      "description": "This file is used for looging all communication messages related to etherpad lite",
-      "display_name": "Log file for etherpad lite",
-      "required": "required",
-      "choice": [
-
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/port": {
-      "type": "string",
-      "description": "The port number etherpad lite should be used to bind",
-      "display_name": "Port Number",
-      "required": "required",
-      "choice": [
-
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ]
-    },
-    "etherpadlite/ipaddress": {
-      "type": "string",
-      "description": "The IP address etherpad lite should be used to bind",
-      "display_name": "IP address to bind",
-      "required": "required",
-      "choice": [
-
-      ],
-      "calculated": false,
-      "recipes": [
-
-      ]
-    }
-  },
-  "license": "Apache 2.0",
-  "suggestions": {
+  "providing": {
   }
 }
