@@ -8,6 +8,7 @@ Requirements
 * node.js
   * python >= 2.7.1
 * mysql
+  * ruby >= 1.8.7
 * rs_utils
 
 Attributes
