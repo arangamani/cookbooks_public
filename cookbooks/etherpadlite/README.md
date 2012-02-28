@@ -8,6 +8,7 @@ Requirements
 * node.js
   * python >= 2.7.1
 * rs_utils
+
 Attributes
 ==========
 etherpadlite/logfile -> File name to store the communication log messages. The default is etherpadlite.log
