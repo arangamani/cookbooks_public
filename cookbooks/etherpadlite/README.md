@@ -18,6 +18,8 @@ etherpadlite/ipaddress -> The IP address etherpad lite should be used to bind. T
 
 etherpadlite/port -> The port number etherpad lite should be used to bind. The default is 80
 
+etherpadlite/db_password -> The master root password for mysql database.
+
 Usage
 =====
 Install the dependencies and start using the recipies. The following recipies are available.
