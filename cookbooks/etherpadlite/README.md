@@ -9,6 +9,7 @@ Requirements
   * python >= 2.7.1
 * mysql
 * rs_utils
+
 Attributes
 ==========
 etherpadlite/logfile -> File name to store the communication log messages. The default is etherpadlite.log
