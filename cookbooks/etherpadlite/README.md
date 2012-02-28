@@ -24,3 +24,10 @@ Install the dependencies and start using the recipies. The following recipies ar
 1. prepare_pad: This recipe prepares the pad by downloading the source, compiling it, and making it ready to be started.
 2. start_pad: This recipe installs daemonize program and then starts the program using daemonize. The daemonize uses the a log file to catch the output. This daemonize also stores the pid of the started process in a pid file.
 3. stop_pad: The process is killed with the help of pid file created in the last step.
+
+Author
+======
+
+Author: Arangamanikkannan Manickam
+
+Author's Email: arangamani.kannan@gmail.com
