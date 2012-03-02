@@ -15,7 +15,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # 
-::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
+#::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
 include_recipe "git::default"
 
 node.set_unless['gitolite']['password'] = secure_password
