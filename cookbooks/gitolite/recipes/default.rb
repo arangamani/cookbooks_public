@@ -20,7 +20,7 @@ include_recipe "git::default"
 
 node.set_unless['gitolite']['password'] = "secure_password"
 
-package "ruby-shadow"
+#package "ruby-shadow"
 
 user "git" do
   comment "Git User"
@@ -48,6 +48,9 @@ git "/home/git/gitolite" do
   action :sync
   user "git"
 end
+
+package "ruby-shadow"
+
 execute "ssh-keygen -q -f /home/git/.ssh/id_rsa -N \"\" " do
   user "git"
   action :run
