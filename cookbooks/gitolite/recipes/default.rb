@@ -32,13 +32,13 @@ end
 directory "/home/git" do
   owner "git"
   group "git"
-  mode "0755"
+  mode "0777"
 end
 
 directory "/home/git/.ssh" do
   owner "git"
   group "git"
-  mode  "0755"
+  mode  "0777"
 end
 
 
