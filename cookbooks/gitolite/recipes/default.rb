@@ -18,7 +18,7 @@
 #::Chef::Recipe.send(:include, Opscode::OpenSSL::Password)
 include_recipe "git::default"
 
-node.set_unless['gitolite']['password'] = secure_password
+node.set_unless['gitolite']['password'] = "secure_password"
 user "git" do
   comment "Git User"
   home "/home/git"
