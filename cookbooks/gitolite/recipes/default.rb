@@ -44,7 +44,7 @@ end
 
 git "/home/git/gitolite" do
   repository node[:gitolite][:repository_url]
-  reference "master"
+  reference node[:gitolite][:branch]
   action :sync
   user "git"
 end
