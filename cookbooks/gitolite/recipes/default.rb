@@ -32,6 +32,13 @@ directory "/home/git" do
   mode "0755"
 end
 
+directory "/home/git/.ssh" do
+  owner "git"
+  group "git"
+  mode  "0755"
+end
+
+
 git "/home/git/gitolite" do
   repository node[:gitolite][:repository_url]
   reference "master"
