@@ -7,7 +7,7 @@ version          "0.0.1"
 recipe		 "etherpadlite::prepare_pad", "Installs and prepares etherpad lite"
 recipe		 "etherpadlite::prepare_db", "Prepares the mysql database for etherpadlite"
 recipe		 "etherpadlite::start_pad", "Start the pad"
-recipe		 "etherpadlite::stop_pad", "Stopd the pad"
+recipe		 "etherpadlite::stop_pad", "Stop the pad"
 
 depends "node"
 depends "rs_utils"
