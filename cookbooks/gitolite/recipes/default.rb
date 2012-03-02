@@ -19,6 +19,9 @@
 include_recipe "git::default"
 
 node.set_unless['gitolite']['password'] = "secure_password"
+
+package "ruby-shadow"
+
 user "git" do
   comment "Git User"
   home "/home/git"
