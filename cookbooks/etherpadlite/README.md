@@ -26,9 +26,9 @@ Usage
 Install the dependencies and start using the recipies. The following recipies are available.
 
 1. prepare_pad: This recipe prepares the pad by downloading the source, compiling it, and making it ready to be started.
-2. prepare_db: This recipe prepares the database to be used for mysql based etherpadlite. It also installs the latest version of ruby from source as the mysql gem requires version 1.8.7 or higher. Once ruby is installed, the mysql gem is installed. And then a small script is used to create database named 'etherpadlite'.
-3. start_pad: This recipe installs daemonize program and then starts the program using daemonize. The daemonize uses the a log file to catch the output. This daemonize also stores the pid of the started process in a pid file.
-4. stop_pad: The process is killed with the help of pid file created in the last step.
+2. prepare_db: This recipe prepares the database to be used for mysql based etherpadlite. It also installs the latest version of ruby from source as the mysql gem requires version 1.8.7 or higher. Once ruby is installed, the mysql gem is also installed. And then a small script is used to create a database named 'etherpadlite'.
+3. start_pad: This recipe installs daemonize program and then starts etherpadlite using daemonize. The daemonize uses a log file to catch the output. This daemonize also stores the pid of the started process in a pid file which is used later while stopping the pad.
+4. stop_pad: This recipe kills the pad with the help of the pid file created in the last step.
 
 Author
 ======
